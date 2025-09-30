@@ -16,8 +16,13 @@ export async function POST(req: NextRequest){
             data: response,
         });
     }catch (error: any){
-        return NextResponse.json({
-            message: error?.message,
-        })
+        const message =
+    error instanceof SyntaxError
+      ? "Invalid JSON body"
+      : error instanceof Error
+      ? error.message
+      : "Unknown error";
+
+  return NextResponse.json({ message }, { status: 400 });
     }
 }
