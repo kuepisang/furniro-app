@@ -15,7 +15,7 @@ export async function POST(req: NextRequest){
             message: 'Successfully session login account',
             data: response,
         });
-    }catch (error: any){
+    }catch (error){
         const message =
     error instanceof SyntaxError
       ? "Invalid JSON body"
