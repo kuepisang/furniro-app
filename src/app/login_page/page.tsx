@@ -9,7 +9,7 @@ import useAuthStore from '@/store/use_auth_store';
 import { useState } from 'react'
 import { useRouter} from 'next/navigation'
 
-export default function login_page() {
+export default function LoginPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const router = useRouter()
